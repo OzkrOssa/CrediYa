@@ -1,0 +1,3 @@
+[submodule "auth-svc"]
+	path = auth-svc
+	url = https://github.com/OzkrOssa/auth-svc
