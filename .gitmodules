@@ -1,3 +1,6 @@
 [submodule "auth-svc"]
 	path = auth-svc
 	url = https://github.com/OzkrOssa/auth-svc
+[submodule "loan-request-svc"]
+	path = loan-request-svc
+	url = https://github.com/OzkrOssa/loan-request-svc
