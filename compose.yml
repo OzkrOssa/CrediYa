@@ -1,0 +1,31 @@
+services:
+  authservice:
+    image: postgres
+    container_name: authservice-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: authdb
+    volumes:
+      - postgres-data-auth:/var/lib/postgresql/data
+      - ./auth_db.sql:/docker-entrypoint-initdb.d/auth_db.sql
+  requestservice:
+    image: postgres
+    container_name: requestservice-postgres
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: loandb
+    volumes:
+      - postgres-data-requests:/var/lib/postgresql/data
+      - ./request_db.sql:/docker-entrypoint-initdb.d/request_db.sql
+
+volumes:
+  postgres-data-auth:
+  postgres-data-requests:
